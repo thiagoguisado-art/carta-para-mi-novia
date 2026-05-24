@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+@keyframes subir{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+
+@keyframes aparecer{
+    from{
+        transform:scale(0.8);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <img src="nosotros.jpg" alt="Nosotros">
+
+    <h1>Para mi cosita ❤️</h1>
+
+    <p>
+        Gracias por aparecer en mi vida y hacerme tan feliz.<br><br>
+        Sos mi lugar favorito, mi paz y lo más lindo que me pasó.
+        <br><br>
+        Te amo hoy, mañana y siempre ❤️
+    </p>
+
+    <button class="btn1" onclick="mostrarMensaje1()">
+        Tocame ❤️
+    </button>
+
+    <button class="btn2" onclick="mostrarMensaje2()">
+        Otra sorpresa ✨
+    </button>
+
+</div>
+
+<script>
+function mostrarMensaje1(){
+    alert('Sos mi persona favorita en el mundo ❤️');
+}
+
+function mostrarMensaje2(){
+    alert('Gracias por hacerme tan feliz cosita ✨❤️');
+}
+
+function crearCorazon(){
+    const corazon = document.createElement('div');
+    corazon.classList.add('corazon');
+    corazon.innerHTML = '❤️';
+
+    corazon.style.left = Math.random() * 100 + 'vw';
+    corazon.style.animationDuration = (Math.random() * 3 + 3) + 's';
+    corazon.style.fontSize = (Math.random() * 20 + 20) + 'px';
+
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 6000);
+}
+
+setInterval(crearCorazon, 300);
+</script>
+
+</body>
+</html>
