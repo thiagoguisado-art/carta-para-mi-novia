@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para vos ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#ff8fab,#ffc2d1,#ffe5ec);
+}
+
+.card{
+    width:750px;
+    background:white;
+    border-radius:30px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(0,0,0,0.2);
+    position:relative;
+    z-index:2;
+    animation:aparecer 1s ease;
+}
+
+img{
+    width:320px;
+    border-radius:25px;
+    margin-bottom:20px;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+h1{
+    color:#ff4d6d;
+    margin-bottom:15px;
+    font-size:42px;
+}
+
+p{
+    color:#444;
+    font-size:22px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+button{
+    border:none;
+    padding:15px 25px;
+    margin:10px;
+    border-radius:15px;
+    cursor:pointer;
+    font-size:18px;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+.btn1{
+    background:#ff4d6d;
+    color:white;
+}
+
+.btn2{
+    background:#ff8fab;
+    color:white;
+}
+
+.corazon{
+    position:absolute;
+    color:red;
+    font-size:25px;
+    animation:subir linear infinite;
+    opacity:0.7;
+}
+
+@keyframes subir{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+
+@keyframes aparecer{
+    from{
+        transform:scale(0.8);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <img src="nosotros.jpg.jpeg">
+
+    <h1>Para mi cosita ❤️</h1>
+
+    <p>
+        Gracias por aparecer en mi vida y hacerme tan feliz.<br><br>
+
+        Sos mi lugar favorito, mi paz y lo más lindo que me pasó.
+        
+        <br><br>
+
+        Te amo hoy, mañana y siempre ❤️
+    </p>
+
+    <button class="btn1" onclick="mostrarMensaje1()">
+        Tocame ❤️
+    </button>
+
+    <button class="btn2" onclick="mostrarMensaje2()">
+        Otra sorpresa ✨
+    </button>
+
+</div>
+
+<script>
+
+function mostrarMensaje1(){
+    alert('Sos mi persona favorita en el mundo ❤️');
+}
+
+function mostrarMensaje2(){
+    alert('Gracias por hacerme tan feliz cosita ✨❤️');
+}
+
+function crearCorazon(){
+
+    const corazon = document.createElement('div');
+
+    corazon.classList.add('corazon');
+
+    corazon.innerHTML = '❤️';
+
+    corazon.style.left = Math.random() * 100 + 'vw';
+
+    corazon.style.animationDuration =
+    (Math.random() * 3 + 3) + 's';
+
+    corazon.style.fontSize =
+    (Math.random() * 20 + 20) + 'px';
+
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 6000);
+}
+
+setInterval(crearCorazon, 300);
+
+</script>
+
+</body>
+</html>
